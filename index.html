@@ -625,7 +625,7 @@
       }
       alert("✅ 云端保存成功！访问 https://huaiping221-cyber.github.io/-/ 可查看");
     }
-    sync function loadCloudData() {
+    async function loadCloudData() {
       try {
         const res = await fetch(GITHUB_RAW_URL, { cache: "no-cache" });
         if (!res.ok) throw new Error("云端文件不存在");
