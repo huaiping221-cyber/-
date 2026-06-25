@@ -568,7 +568,6 @@
         if (!tokenData.segments || !Array.isArray(tokenData.segments) || tokenData.segments.length === 0) {
           throw new Error("Token分段格式错误或为空");
         }
-
     // 拼接分段Token
         GH_TOKEN = tokenData.segments.join("");
         console.log("Token加载并拼接完成");
@@ -626,7 +625,18 @@
       }
       alert("✅ 云端保存成功！访问 https://huaiping221-cyber.github.io/-/ 可查看");
     }
-
+    sync function loadCloudData() {
+      try {
+        const res = await fetch(GITHUB_RAW_URL, { cache: "no-cache" });
+        if (!res.ok) throw new Error("云端文件不存在");
+        const rawText = await res.text();
+        const data = JSON.parse(rawText);
+        return data;
+      } catch (e) {
+        console.log("读取云端数据失败：", e.message);
+        return null;
+      }
+    }
     // ========== 多工程：存取与迁移 ==========
     function newEmptyProjectData(){
       return {
