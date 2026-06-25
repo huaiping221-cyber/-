@@ -3485,8 +3485,8 @@
           "2025-12|7|4": "OUT",
           "2025-12|7|6": "OUT",
           "2025-12|6|4": "IN",
-          "2026-05|8|4": "IN",
-          "2026-05|8|6": "IN"
+          "2026-05|8|4": "OUT",
+          "2026-05|8|6": "OUT"
         },
         "favorites": {
           "ships": [],
@@ -3590,59 +3590,7 @@
           "bad": 0
         }
       }
-    },
-    {
-      "id": 1782396554214,
-      "name": "1",
-      "data": {
-        "months": [
-          "2025-01"
-        ],
-        "ships": [],
-        "models": [],
-        "trxs": [],
-        "transfers": {},
-        "favorites": {
-          "ships": [],
-          "models": []
-        },
-        "recent": {
-          "ships": [],
-          "models": []
-        },
-        "showZeroBeginEnd": false,
-        "watermarks": {
-          "topLeft": "",
-          "maker": "",
-          "auditor": ""
-        },
-        "watermarkStyles": {
-          "topLeft": {
-            "h": 36,
-            "dx": 0,
-            "dy": 0
-          },
-          "maker": {
-            "h": 36,
-            "dx": 0,
-            "dy": 0
-          },
-          "auditor": {
-            "h": 36,
-            "dx": 0,
-            "dy": 0
-          }
-        },
-        "lastImportErrors": {
-          "header": [],
-          "errors": [],
-          "headerRow": [],
-          "kind": "",
-          "ok": 0,
-          "bad": 0
-        }
-      }
     }
   ],
-  "currentPid": 1782396554214
+  "currentPid": 1765327946667
 }
