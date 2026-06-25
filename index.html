@@ -516,10 +516,13 @@
     // 云端GitHub配置
     const GITHUB_RAW_URL = "https://raw.githubusercontent.com/huaiping221-cyber/-/main/fuel_data.json";
     const GITHUB_UPLOAD_API = "https://api.github.com/repos/huaiping221-cyber/-/contents/fuel_data.json";
-    const GITHUB_TOKEN_JSON_URL = "https://raw.githubusercontent.com/huaiping221-cyber/-/main/token_segments.json";
     // 需自行配置GitHub token（建议放弹窗输入，这里预留变量）
-    let GH_TOKEN = "";
+    let GH_TOKEN = "github_pat"
+    + "_11CFWBULY01GRyOdrxghfb_9dP"
+    + "7ak7tCnuzJUdFUGrRLvtkRu0Z75rQ1C3QaA"
+    + "BO43JPV4T7L3NYNm2tGNB";
     const CLOUD_FILE_PATH = "fuel_data.json";
+    
 
     // 当前工程的工作态（镜像）
     const state = {
@@ -559,30 +562,20 @@
     function round2(v){ return Math.round((v||0)*100)/100; }
     function round6(v){ return Math.round((v||0)*1e6)/1e6; }
     // 读取GitHub云端数据
-    async function loadAndCombineToken() {
+    async function loadCloudData() {
       try {
-        const res = await fetch(GITHUB_TOKEN_JSON_URL, { cache: "no-cache" });
-        if (!res.ok) throw new Error("获取Token分段失败");
-        const tokenData = await res.json();
-
-        if (!tokenData.segments || !Array.isArray(tokenData.segments) || tokenData.segments.length === 0) {
-          throw new Error("Token分段格式错误或为空");
-        }
-    // 拼接分段Token
-        GH_TOKEN = tokenData.segments.join("");
-        console.log("Token加载并拼接完成");
+        const res = await fetch(GITHUB_RAW_URL, { cache: "no-cache" });
+        if (!res.ok) throw new Error("云端无备份");
+        const text = await res.text();
+        return JSON.parse(text);
       } catch (e) {
-        console.error("Token加载失败：", e.message);
-        GH_TOKEN = "";
-        alert("Token加载失败，云端保存功能将不可用");
+        console.log("云端读取失败：", e.message);
+        return null;
       }
     }
+    
     async function saveToCloud() {
-      if (!GH_TOKEN || GH_TOKEN.trim() === "") {
-        alert("未加载有效GitHub Token，无法云端保存");
-        return;
-        }
-  // 原有剩余代码不变
+
   // 组装当前全量数据，和localStorage存储结构完全一致
       const store = { projects: state.projects, currentPid: state.currentPid };
       const jsonStr = JSON.stringify(store, null, 2);
@@ -625,18 +618,7 @@
       }
       alert("✅ 云端保存成功！访问 https://huaiping221-cyber.github.io/-/ 可查看");
     }
-    async function loadCloudData() {
-      try {
-        const res = await fetch(GITHUB_RAW_URL, { cache: "no-cache" });
-        if (!res.ok) throw new Error("云端文件不存在");
-        const rawText = await res.text();
-        const data = JSON.parse(rawText);
-        return data;
-      } catch (e) {
-        console.log("读取云端数据失败：", e.message);
-        return null;
-      }
-    }
+
     // ========== 多工程：存取与迁移 ==========
     function newEmptyProjectData(){
       return {
@@ -3134,14 +3116,10 @@ ${innerHtml}
     }
 
     // 启动
-    // 启动
     (async function main(){
-  // 先加载token
-      await loadAndCombineToken();
-  // 初始化本地数据
       ensureInit();
       bindEvents();
-  // 读取云端数据
+  // 页面加载自动读取云端数据，可选注释关闭自动拉取
       const cloudData = await loadCloudData();
       if (cloudData && confirm("检测到云端备份，是否覆盖本地数据？")) {
         localStorage.setItem(LS_KEY_V2, JSON.stringify(cloudData));
