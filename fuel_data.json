@@ -20,7 +20,8 @@
           "2026-02",
           "2026-03",
           "2026-04",
-          "2026-05"
+          "2026-05",
+          "2026-06"
         ],
         "ships": [
           {
@@ -3469,6 +3470,38 @@
             "supplier": "",
             "purchaseDate": "",
             "ts": 1781659088793
+          },
+          {
+            "id": 221,
+            "ym": "2026-06",
+            "shipId": 8,
+            "modelId": 4,
+            "type": "BEGIN",
+            "qty": 0,
+            "unitPrice": 0,
+            "amount": 0,
+            "isEstimate": false,
+            "sourceId": null,
+            "note": "期初正式",
+            "supplier": "",
+            "purchaseDate": "",
+            "ts": 1782866884846
+          },
+          {
+            "id": 222,
+            "ym": "2026-06",
+            "shipId": 8,
+            "modelId": 6,
+            "type": "BEGIN",
+            "qty": 0,
+            "unitPrice": 0,
+            "amount": 0,
+            "isEstimate": false,
+            "sourceId": null,
+            "note": "期初正式",
+            "supplier": "",
+            "purchaseDate": "",
+            "ts": 1782866899507
           }
         ],
         "transfers": {
@@ -3494,16 +3527,16 @@
         },
         "recent": {
           "ships": [
+            8,
             14,
             6,
-            8,
             5,
             9,
             10
           ],
           "models": [
-            4,
-            6
+            6,
+            4
           ]
         },
         "showZeroBeginEnd": true,
