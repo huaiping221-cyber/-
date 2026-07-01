@@ -3636,6 +3636,42 @@
             "supplier": "",
             "purchaseDate": "",
             "ts": 1782874864220
+          },
+          {
+            "id": 231,
+            "ym": "2026-06",
+            "shipId": 6,
+            "modelId": 4,
+            "type": "CONSUME",
+            "qty": 59.3,
+            "stopQty": 0,
+            "unitPrice": 0,
+            "amount": 0,
+            "isManualConsumeAmt": false,
+            "isEstimate": false,
+            "sourceId": null,
+            "note": "",
+            "supplier": "",
+            "purchaseDate": "",
+            "ts": 1782885196557
+          },
+          {
+            "id": 232,
+            "ym": "2026-06",
+            "shipId": 14,
+            "modelId": 4,
+            "type": "CONSUME",
+            "qty": 55.3,
+            "stopQty": 0,
+            "unitPrice": 0,
+            "amount": 0,
+            "isManualConsumeAmt": false,
+            "isEstimate": false,
+            "sourceId": null,
+            "note": "",
+            "supplier": "",
+            "purchaseDate": "",
+            "ts": 1782885235688
           }
         ],
         "transfers": {
@@ -3661,12 +3697,12 @@
         },
         "recent": {
           "ships": [
+            14,
+            6,
             2,
             10,
             9,
-            5,
-            14,
-            6
+            5
           ],
           "models": [
             4,
@@ -3807,5 +3843,5 @@
       }
     }
   ],
-  "currentPid": 1782348144096
+  "currentPid": 1765327946667
 }
