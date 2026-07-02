@@ -1874,12 +1874,18 @@
             "qty": 212.8,
             "unitPrice": 0,
             "amount": 1327646.02,
-            "isEstimate": true,
+            "isEstimate": false,
             "sourceId": null,
-            "note": "期初暂估",
+            "note": "期初正式 [已更正]",
             "supplier": "",
             "purchaseDate": "",
-            "ts": 1767574486981
+            "ts": 1767574486981,
+            "_backupBegin": {
+              "qty": 212.8,
+              "amount": 1327646.02,
+              "note": "期初暂估",
+              "isEstimate": true
+            }
           },
           {
             "id": 108,
@@ -2342,12 +2348,18 @@
             "qty": 527.1,
             "unitPrice": 0,
             "amount": 2490897.35,
-            "isEstimate": true,
+            "isEstimate": false,
             "sourceId": null,
-            "note": "期初暂估",
+            "note": "期初正式 [已更正]",
             "supplier": "",
             "purchaseDate": "",
-            "ts": 1767580790692
+            "ts": 1767580790692,
+            "_backupBegin": {
+              "qty": 527.1,
+              "amount": 2490897.35,
+              "note": "期初暂估",
+              "isEstimate": true
+            }
           },
           {
             "id": 142,
@@ -3691,7 +3703,11 @@
           "2026-05|8|4": "OUT",
           "2026-05|8|6": "OUT",
           "2026-06|14|4": "OUT",
-          "2026-05|14|4": "IN"
+          "2026-05|14|4": "IN",
+          "2025-02|3|4": "IN",
+          "2025-02|3|6": "IN",
+          "2025-02|2|4": "IN",
+          "2025-02|2|6": "IN"
         },
         "favorites": {
           "ships": [],
@@ -3879,5 +3895,5 @@
       }
     }
   ],
-  "currentPid": 1782348144096
+  "currentPid": 1765327946667
 }
